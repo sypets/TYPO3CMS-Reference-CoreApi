@@ -4,7 +4,8 @@
 
 
 .. _extension-configuration-files:
-
+.. _extLocalconf:
+.. _extTables:
 
 ========================================================
 Configuration Files (ext_tables.php & ext_localconf.php)

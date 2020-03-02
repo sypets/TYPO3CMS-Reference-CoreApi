@@ -21,8 +21,9 @@ created, how existing content elements or plugins can be customized etc.
    AddingYourOwnContentElements
    CreatePlugins
    ContentElementsWizard
-   ../FlexForms/Index
-   ../../DataFormats/T3datastructure/Index
-   ../BackendLayout/Index
    BestPractices
 
+Additional information about content elements is found in:
+
+* :ref:`be-layout`
+* :ref:`flexforms`

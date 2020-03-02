@@ -9,7 +9,7 @@ TYPO3 Explained
 
 .. rst-class:: horizbuttons-tip-m
 
-- :ref:`Configuration <configuration>`
+- :ref:`Configuration & Settings <configuration>`
 - :ref:`Doctrine-dbal <database>`
 - :ref:`DependencyInjection`
 - :ref:`FAL <fal>`
@@ -110,6 +110,7 @@ address the task at hand.
    ApiOverview/Authentication/Index
    ApiOverview/Autoloading/Index
    ApiOverview/AccessControl/Index
+   ApiOverview/BackendLayout/Index
    ApiOverview/BackendModules/Index
    ApiOverview/BackendRouting/Index
    ApiOverview/BackendUserObject/Index

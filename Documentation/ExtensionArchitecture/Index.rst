@@ -17,6 +17,7 @@ INTRODUCTION
    Introduction/Index
    ExtensionManagement/Index
    SystemAndLocalExtensions/Index
+   NamingConventions/Index
 
 RESERVED FILES & HOW THEY DEFINE FUNCTIONALITY
 
@@ -29,7 +30,6 @@ RESERVED FILES & HOW THEY DEFINE FUNCTIONALITY
    ComposerJson/Index
    DeclarationFile/Index
    ConfigurationFiles/Index
-   NamingConventions/Index
    ConfigurationOptions/Index
    ExtendingTca/Index
 

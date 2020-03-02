@@ -6,9 +6,14 @@
 Glossary
 ===========
 
-We refer to a configuration language, that only defines the syntax as
-**configuration syntax**. When we refer to semantics, where the values
-are stored, the scope etc. we use the term **configuration method**.
+Here we categorize the configuration into types and clarify the terms
+used.
+
+Some of the documentation of TYPO3 configuration may be confusing if
+it is not clear, what is currently being referred to. For example,
+TypoScript can be used as **configuration syntax** (used in TypoScript
+templating and TSconfig) or as a **configuration method**. We explain
+these two terms here.
 
 
 Configuration syntax

@@ -2,6 +2,8 @@
 
 
 .. _composer-json:
+.. _composerJsonExt:
+
 
 =====================
 composer.json
