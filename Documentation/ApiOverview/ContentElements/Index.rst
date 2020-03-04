@@ -21,6 +21,7 @@ created, how existing content elements or plugins can be customized etc.
    AddingYourOwnContentElements
    CreatePlugins
    ContentElementsWizard
+   ../FlexForms/Index
    BestPractices
 
 Additional information about content elements is found in:

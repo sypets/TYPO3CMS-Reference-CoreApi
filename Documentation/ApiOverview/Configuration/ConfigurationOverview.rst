@@ -77,7 +77,7 @@ PHP syntax
 ----------
 
 PHP is used for the :php:`$GLOBALS` array which includes TCA
-(:php:`$GLOBALS['TCA']`, Global Configuration (:php:`GLOBALS['TYPO3_CONF_VARS']`),
+(:php:`$GLOBALS['TCA']`), Global Configuration (:php:`GLOBALS['TYPO3_CONF_VARS']`),
 User Settings (:php:`$GLOBALS['TYPO3_USER_SETTINGS']`, etc.
 
 
@@ -106,7 +106,7 @@ These are the main configuration methods used by TYPO3:
 Global variables ($GLOBALS)
 ---------------------------
 
-The global variables (and some other configuration can be viewed in the
+The global variables (and some other configuration) can be viewed in the
 TYPO3 backend :guilabel:`SYSTEM > Configuration` or by viewing the
 :php:`$GLOBALS` array in a debugger.
 
@@ -123,9 +123,7 @@ is used for system wide configuration.
 
 Changing of variables can be done in the backend in :guilabel:`Settings > Global Configuration`
 and is written to :file:`typo3conf/LocalConfiguration.php`. The settings can be
-overridden in the file :file:`typo3conf/AdditionalConfiguration.php`. Some
-configuration, such as caching or logging cannot be set in the backend and must
-be configured in external files.
+overridden in the file :file:`typo3conf/AdditionalConfiguration.php`.
 
 More information:
     * :ref:`Global Configuration <typo3ConfVars>`
@@ -169,8 +167,8 @@ in :file:`ext_tables.php`. This is no longer correct. You should steer away from
 examples and snippets (or extensions) that write TCA in :file:`ext_tables.php` or even
 better notify the author about outdated examples.
 
-:ref:`Doing this correctly <extending-tca>` is important due to how TYPO3 concatenates and caches some
-configuration files!
+:ref:`Doing this correctly <extending-tca>` is important due to how TYPO3 concatenates
+and caches some configuration files!
 
 More information:
 
@@ -229,8 +227,7 @@ line of PHP.
 :ref:`typoscript-syntax-start`. Other than that, TSconfig and TypoScript Templating
 don't have much more in common - they consist of entirely different properties.
 
-A full reference of properties as well as an introduction to explain details configuration usage, API and
-load orders can be found in the :ref:`t3tsconfig:start`. While Developers
+A full reference of properties as well as an introduction can be found in the :ref:`t3tsconfig:start`. While Developers
 should have an eye on this document, it is mostly used as a reference for Integrators who make life as
 easy as possible for backend users.
 
@@ -238,9 +235,9 @@ easy as possible for backend users.
 Flexforms
 ---------
 
-FlexForms have a very narrow scope as they only apply to one content element.  They are one of the
-few settings that can be modified by editors directly (that are not admins or system maintainers).
-The configuration is done in the backend when editing a content element.
+FlexForms have a very narrow scope as they only apply to one content element. Editing Flexforms
+is a part of editing content which is usually done by editors. So, we do not consider that part
+configuration. But setting up the FlexForms in an extension can also be considered configuration too.
 
 More information:
     :ref:`Flexform <flexforms>`

@@ -71,7 +71,6 @@ or :ref:`globals-variables`.
 
    Glossary
    ConfigurationOverview
-   ../FlexForms/Index
    ../GlobalValues/GlobalVariables/Index
    ../GlobalValues/Typo3ConfVars/Index
    ../../DataFormats/T3datastructure/Index
