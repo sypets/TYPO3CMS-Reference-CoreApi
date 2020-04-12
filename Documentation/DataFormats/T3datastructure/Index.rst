@@ -14,7 +14,7 @@ which can add their own configuration inside.
 
 Such applications can be:
 
-- :ref:`FlexForms <t3tca:columns-flex>` - a TCEform type which will allow users to build
+- :ref:`FlexForms <flexforms>` - a TCEform type which will allow users to build
   information hierarchies (in XML) according to the Data Structure. In
   this sense the Data Structure is like a DTD (Document Type
   Definition) for the backend which can render a dynamic form based on
