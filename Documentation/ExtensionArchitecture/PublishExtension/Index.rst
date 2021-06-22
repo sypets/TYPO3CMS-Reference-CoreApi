@@ -6,8 +6,12 @@
 Publish your extension
 ======================
 
-By publishing an extension to the
-`TYPO3 Extension Repository (TER) <https://extensions.typo3.org/>`__, we mean
+.. important::
+
+   Before you publish your extension, check out the
+   :ref:`publish-extension-prerequisites`.
+
+By publishing an extension we mean
 making it publicly available. Follow these four steps, we recommend to do all
 of these.
 
