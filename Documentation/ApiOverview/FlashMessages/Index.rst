@@ -8,7 +8,7 @@
 Flash Messages
 ==============
 
-There exists a generic system to show users that an action
+There exists a generic system to show **Backend** users that an action
 was performed successfully, or more importantly, failed. This system
 is known as "flash messages". The screenshot below shows the various
 severity levels of messages that can be emitted.
