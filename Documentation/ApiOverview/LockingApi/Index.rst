@@ -33,7 +33,8 @@ not use this mechanism and respective locking strategy (e.g. if function :php:`s
 available, :php:`SemaphoreLockStrategy` will not be used).
 
 *  **FileLockStrategy**: uses the PHP function `flock() <https://www.php.net/manual/en/function.flock.php>`__
-   and creates a file in `typo3temp/var/lock`
+   and creates a file in :file:`var/lock` (:file:`public/typo3temp/var/lock`
+   in non-Composer installations).
    The directory can be overwritten by configuration:
 
    .. code-block:: php
@@ -46,8 +47,8 @@ available, :php:`SemaphoreLockStrategy` will not be used).
 
 *  **SemaphoreLockStrategy**: uses the PHP function `sem_get()
    <https://www.php.net/manual/en/function.sem-get.php>`__
-*  **SimpleLockStrategy** is a simple method of file locking. It also uses the folder
-   `typo3temp/var/lock`.
+*  **SimpleLockStrategy** is a simple method of file locking. It also uses the
+   same folder as :php:`FileLockStrategy` (:file:`<var directory>/lock`).
 
 Extensions can add a locking strategy by providing a class which
 implements the LockingStrategyInterface.
@@ -258,7 +259,8 @@ issue for more information
 
 or check if PHP flock works on your filesystem.
 
-The FileLockStrategy uses :php:`flock()`. This will create a file in `typo3temp/var/lock`.
+The FileLockStrategy uses :php:`flock()`. This will create a file in
+:file:`var/lock`.
 
 Because of its capabilities (`LOCK_CAPABILITY_EXCLUSIVE`, `LOCK_CAPABILITY_SHARED`
 and `LOCK_CAPABILITY_NOBLOCK`) and priority (75), FileLockStrategy is used as
@@ -278,7 +280,7 @@ servers for load balancing or high availability.
 Specifically, this may be a problem:
 
 * **Do not** use a local locking mechanism (e.g. semaphores or file locks
-  in `typo3temp/var`, *if* `typo3temp/var` is mapped to local storage and
+  in :file:`var/lock`, *if* :file:`var/lock` is mapped to local storage and
   not shared) in combination with a central cache mechanism (e.g. central Redis
   or DB used for page caching in TYPO3)
 
