@@ -98,3 +98,4 @@ Read more
     :glob:
 
     *
+    CommandReference/Index

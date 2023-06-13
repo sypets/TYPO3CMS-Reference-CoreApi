@@ -62,255 +62,6 @@ Is the same as running:
     php vendor/bin/typo3 redirects:checkintegrity -h
 
 
-EXT:core
-========
-
-.. _console-command-reference_backend_user_create:
-
-backend:user:create: Create a backend user
-------------------------------------------
-
-*command only*
-
-This is not available in the scheduler, but is also available in the Admin tool
-:guilabel:`Maintenance > Create Administrative User`.
-
-.. _console-command-reference_backend_lock:
-
-backend:lock: Lock the TYPO3 Backend
-------------------------------------
-
-*command (schedulable)*
-
-It is possible to lock the backend, so that users cannot log in and existing
-sessions will be terminated. This can be used for example during administrative
-tasks, major updates, during a security breach and in particular during
-tasks which make it necessary to restrict editing.
-
-Use :ref:`backend:unlock <console-command-reference_backend_unlock>` to unlock
-the backend again.
-
-.. _console-command-reference_backend_resetpassword:
-
-backend:resetpassword
----------------------
-
-*command only*
-
-Trigger a password reset for a backend user
-
-.. _console-command-reference_backend_unlock:
-
-backend:unlock
---------------
-
-*command (schedulable)*
-
-Unlock the TYPO3 Backend.
-
-.. _console-command-reference_cache_flush:
-
-cache:flush
------------
-
-*command only*
-
-Clear cache.
-
-Optionally use the -g option to specify the cache group to clear. Without
-the option, all caches are cleared.
-
-For a list of cache groups, see :ref:`console-command-reference_cache_warmup`.
-
-.. _console-command-reference_cache_warmup:
-
-cache:warmup
-------------
-
-*command only*
-
-Cache warmup.
-
-Optionally use the -g option to specify the cache group to warmup. Without
-the option, all caches are warmed up.
-
-Cache groups:
-
-*   system
-*   pages
-*   di (dependency injection cache)
-*   all
-
-Examples:
-
-.. code-block:: shell
-    :caption: console command
-
-    php vendor/bin/typo3 -g system
-
-.. attention::
-
-    This does not warmup all pages. This is just a basic warming up of caches.
-
-.. _console-command-reference_dumpautoload:
-
-dumpautoload
-------------
-
-*command only*
-
-.. attention::
-
-    Only relevant in non-Composer mode! In Composer mode composer dump-autoload
-    can be used.
-
-Updates class loading information in non-composer mode.
-
-This command does not have a namespace and is thus shown at the top if listing
-all commands.
-
-Autoloading can also be triggered in Admin Tools :guilabel:`Maintenance >
-Rebuild PHP Autoload Information`.
-
-It is usually not necessary to run this command. If sextension are installed via
-the Extension Manager, autoloading of classes is performed automatically. However,
-it may be necessary to install an extension via Git or other means and then
-it is necessary to manually flush the cache and rebuild the PHP autoload
-information.
-
-.. _console-command-reference_backend_extension_list:
-
-extension:list
---------------
-
-*command only*
-
-Shows the list of extensions available to the system.
-
-.. _console-command-reference_mailer_spool_send:
-
-mailer:spool:send
------------------
-
-*command (schedulable)*
-
-alias: swiftmailer:spool:send
-
-Sends emails from the spool.
-
-.. _console-command-reference_messenger_consume:
-
-messenger:consume
------------------
-
-*command (schedulable)*
-
-Consume messages.
-
-This is part of the feature :ref:`Adopt Symfony Messenger as a message bus and queue
-<message-bus>` introduced in TYPO3 v12.
-
-.. _console-command-reference_referenceindex_update:
-
-referenceindex:update
----------------------
-
-*command (schedulable)*
-
-Update the reference index of TYPO3
-
-It is recommended to run this regularly, e.g. once a day.
-
-It is also possible to run the reference index check or update in the "DB check"
-System module.
-
-It is important for the reference index to be kept up-to-date because
-the reference index keeps track of references (connections) between records
-(e.g. files, pages). For example if a page links to another page using a page
-link a connection is formed from page A via the link to page B. If page B
-is deleted, the link will no longer work. The same is true for links to files.
-It is possible to see the number of references for a file in the filelist.
-This uses the reference index. If no references are displayed, editors might
-delete the file, unaware that it is still being used.
-
-In theory, the reference index will be automatically updated when
-references change, but for some reason this may not always be the case.
-
-It is the responsibility of DataHandler to update the reference index. Changes
-in content which are performed via DataHandler will initiate an update of the
-reference index, while changes which are performed via direct database changes
-(e.g. via QueryBuilder) will not.
-
-.. _console-command-reference_site_list:
-
-site:list
----------
-
-*command only*
-
-Shows the list of sites available to the system.
-
-.. _console-command-reference_site_show:
-
-site:show
----------
-
-*command only*
-
-Shows the configuration of the specified site.
-
-Example: show site information for site "t3intro":
-
-.. code-block:: shell
-    :caption: console command
-
-    php typo3/sysext/core/bin/typo3 site:show t3intro
-
-EXT:extensionmanager
-====================
-
-.. _console-command-reference_extension_setup:
-
-extension:setup
----------------
-
-*command only*
-
-Set up extensions. This will perform necessary setup after installing or
-updating an extension (including system extensions!).
-
-.. attention::
-
-    This is only relevant for non-Composer installations. Extensions are
-    automatically setup when installed via the Extension Manager in non-Composer
-    mode.
-
-This includes, but is not limited to:
-
-*   Update the database based on the database schema supplied by the extension
-    (in :file:`ext_tables.sql`).
-*   Import site configuration from the extension.
-*   ...
-
-After running this command, it is usually necessary to also flush the cache.
-
-EXT:impexp
-==========
-
-.. _console-command-reference_impexp_export:
-
-impexp:export
--------------
-
-*command (schedulable)
-
-Exports a T3D / XML file with content of a page tree.
-
-More information can be found in the impexp documentation:
-
-*   :ref:`ext_impexp:command_line`
-
-.. _console-command-reference_impexp_import:
 
 impexp:import
 -------------
@@ -621,3 +372,32 @@ Publish a workspace with a publication date.
 More information can be found in the workspaces extension manual:
 
 * :ref:`ext_workspaces:scheduler`
+
+
+EXT:core
+========
+
+.. toctree::
+    :glob:
+    :titlesonly:
+
+    Core/*
+
+EXT:extensionmanager
+====================
+
+.. toctree::
+    :glob:
+    :titlesonly:
+
+    Extensionmanager/*
+
+EXT:impexp
+==========
+
+.. toctree::
+    :glob:
+    :titlesonly:
+
+    Impexp/*
+
