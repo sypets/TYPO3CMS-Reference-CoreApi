@@ -75,7 +75,15 @@ automatically receives those services and registers them.
 If :yaml:`autoconfigure` is
 not enabled in your :file:`Configuration/Services.(yaml|php)` file,
 manually configure your item providers with the
-:yaml:`backend.contextmenu.itemprovider` tag.
+:yaml:`backend.contextmenu.itemprovider` tag:
+
+.. code-block:: php
+    :caption: Configuration/Services.yaml
+
+    Myvendor\Myexample\ContextMenu\ItemProvider:
+      tags:
+        - name: 'backend.contextmenu.itemprovider'
+
 
 There are two item providers which are always available:
 
